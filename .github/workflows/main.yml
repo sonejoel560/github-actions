@@ -38,7 +38,6 @@ jobs:
       - name: What is in your target folder?
         run:
           cd target
-          ls -a
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
