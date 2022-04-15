@@ -31,21 +31,6 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: 3.10.0
-      
-      - name: GitHub Action for Jira
-        if: always()
-        run:
-          curl --request POST \
-          --header 'content-type: application/json' \
-          --url https://38afc644-653b-4f35-99b1-81a18e11a662.hello.atlassian-dev.net/x1/eA03c4h-ejvuZwRj2wuF9sgBjKM \
-          --data '{
-            "branch": "${{ github.ref }}",
-            "commitMessage": "${{ github. event.head commit.message }}",
-            "jobStatus": "${{ job.status }}",
-            "repository": "${{ github.repository }}",
-            "runId": "${{ github.run_id }}",
-            "runNumber": "${{ github.run_number }}"
-          }'
         
       - name: List files in current directory
         run: ls -a
